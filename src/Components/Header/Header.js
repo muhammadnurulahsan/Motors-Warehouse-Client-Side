@@ -6,7 +6,7 @@ import {
 import { Link } from "react-router-dom";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "./../../Img/logo.svg";
+import logo from "./../../assets/logo.svg";
 
 import React from "react";
 import "./Header.css";
@@ -27,24 +27,28 @@ const Header = () => {
     auth.signOut();
   };
   return (
-    <div className="bg-color text-light pb-3 mb-3">
-      <Navbar className="container p2-4" expand="lg">
+    <div className="bg-color text-light sticky-top">
+      <Navbar className="container p2-4  p-1" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">
-            <img className="me-3" width="200px" src={logo} alt="" />
+            <img className="me-3" width="180px" src={logo} alt="" />
           </Navbar.Brand>
-          <Navbar.Toggle />
+          <Navbar.Toggle className="bg-light" />
           <Navbar.Collapse>
-            <Nav className="mx-auto text-center my-2 my-lg-0">
-              <Nav.Link className="text-light  fs-5" as={Link} to="/home">
+            <Nav className="mx-auto text-center my-lg-0">
+              <Nav.Link className="text-light underline fs-5" as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link className="text-light  fs-5" as={Link} to="/blogs">
+              <Nav.Link
+                className="text-light underline fs-5"
+                as={Link}
+                to="/blogs"
+              >
                 Blogs
               </Nav.Link>
               {user && (
                 <Nav.Link
-                  className="text-light  fs-5"
+                  className="text-light underline fs-5"
                   as={Link}
                   to="/add-items"
                 >
@@ -52,13 +56,17 @@ const Header = () => {
                 </Nav.Link>
               )}
               <Nav.Link
-                className="text-light  fs-5"
+                className="text-light underline fs-5"
                 as={Link}
                 to="/our-services"
               >
                 Our Services
               </Nav.Link>
-              <Nav.Link className="text-light  fs-5" as={Link} to="/about-us">
+              <Nav.Link
+                className="text-light underline fs-5"
+                as={Link}
+                to="/about-us"
+              >
                 About Us
               </Nav.Link>
             </Nav>
@@ -142,7 +150,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <hr className="my-2" />
+      <hr className="my-0" />
       <div>
         <div className="container d-flex justify-content-between align-items-center flex-md-row flex-column">
           <div>

@@ -1,0 +1,54 @@
+.card-title-text {
+  font-family: Montserrat;
+  font-size: 28px;
+  line-height: 28px;
+  letter-spacing: -2px;
+  font-weight: 700;
+}
+
+.extra-banner {
+  background-image: linear-gradient(
+      rgba(191, 180, 172, 0.4),
+      rgba(88, 84, 80, 0.658)
+    ),
+    url(../../../assets/review-img.jpg);
+  height: 590px;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.custom-card-text {
+  font-family: Montserrat, Arial;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+/*responsive*/
+@media (max-width: 574px) {
+  .extra-banner {
+    background-image: linear-gradient(
+        rgba(191, 180, 172, 0.4),
+        rgba(88, 84, 80, 0.658)
+      ),
+      url(../../../assets/review-img.jpg);
+    height: 1100px;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 393px) {
+  .extra-banner {
+    background-image: linear-gradient(
+        rgba(191, 180, 172, 0.4),
+        rgba(88, 84, 80, 0.658)
+      ),
+      url(../../../assets/review-img.jpg);
+    height: 1200px;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}

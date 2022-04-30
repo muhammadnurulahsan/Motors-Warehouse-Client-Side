@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Blogs from "./Components/Blogs/Blogs";
-import Footer from "./Components/Footer/Footer";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
@@ -16,6 +15,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import OurServices from "./Components/OurServices/OurServices";
 import ManageInventories from "./Components/ManageInventories/ManageInventories";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -55,7 +55,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/item/:id"
+          path="/items/:id"
           element={
             <RequireAuth>
               <ItemsDetail />

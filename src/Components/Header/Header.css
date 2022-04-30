@@ -1,14 +1,42 @@
 .font {
   font-family: "IBM Plex Sans Arabic", sans-serif !important;
 }
- 
+
 .bg-color {
-  background-color: #25293f;
+  background-color: #111827;
 }
 
 .input {
   width: 650px;
-  height: 50px;
+  height: 40px;
+}
+
+small {
+  font-size: 12px;
+}
+
+/* <!-- 🚩 NAVBAR STYLE START 💭 --> */
+.underline {
+  position: relative;
+  padding: 5px;
+}
+
+.underline:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background-color: #ffffff;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+.underline:after {
+  left: 0;
+  top: 40px;
+}
+
+.underline:hover:after {
+  width: 100%;
 }
 
 .icon {
@@ -35,13 +63,13 @@
 @media only screen and (max-width: 600px) {
   .input {
     width: 350px;
-    height: 50px;
+    height: 40px;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .input {
     width: 325px;
-    height: 50px;
+    height: 40px;
   }
 }
