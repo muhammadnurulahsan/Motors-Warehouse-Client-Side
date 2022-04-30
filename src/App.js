@@ -9,11 +9,13 @@ import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import MyItems from "./Components/MyItems/MyItems";
-import ManageItems from "./Components/ManageItems/ManageItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import AddItems from "./Components/AddItems/AddItems";
 import ItemsDetail from "./Components/ItemsDetail/ItemsDetail";
 import NotFound from "./Components/NotFound/NotFound";
+import AboutUs from "./Components/AboutUs/AboutUs";
+import OurServices from "./Components/OurServices/OurServices";
+import ManageInventories from "./Components/ManageInventories/ManageInventories";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/about-us" element={<AboutUs />}></Route>
+        <Route path="/our-services" element={<OurServices />}></Route>
         <Route path="/resetpassword" element={<ResetPassword />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route
@@ -43,10 +47,10 @@ function App() {
           }
         ></Route>
         <Route
-          path="/manage-items"
+          path="/manage-inventories"
           element={
             <RequireAuth>
-              <ManageItems />
+              <ManageInventories />
             </RequireAuth>
           }
         ></Route>
