@@ -4,3 +4,82 @@
   line-height: 24px;
   font-weight: 700;
 }
+
+.quantity-text {
+  font-family: Montserrat, Arial;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.price-text {
+  font-family: Montserrat, Arial;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.supplier-text {
+  font-family: Montserrat, Arial;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+/*responsive*/
+@media (max-width: 574px) {
+  .name-text {
+    font-family: Montserrat, Arial;
+    font-size: 23px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .quantity-text {
+    font-family: Montserrat, Arial;
+    font-size: 16.5px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  .price-text {
+    font-family: Montserrat, Arial;
+    font-size: 16.5px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  .supplier-text {
+    font-family: Montserrat, Arial;
+    font-size: 16.5px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 393px) {
+  .name-text {
+    font-family: Montserrat, Arial;
+    font-size: 23px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .quantity-text {
+    font-family: Montserrat, Arial;
+    font-size: 14.5px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  .price-text {
+    font-family: Montserrat, Arial;
+    font-size: 14.5px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  .supplier-text {
+    font-family: Montserrat, Arial;
+    font-size: 14.5px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+}

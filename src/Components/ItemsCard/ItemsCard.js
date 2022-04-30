@@ -21,12 +21,12 @@ const ItemsCard = ({ items }) => {
             <h1 className="name-text">{name}</h1>
             <div className="d-flex justify-content-between">
               <div className="">
-                <h5 className="my-2">Price: ${price}</h5>
-                <h5 className="py-1">Quantity: {quantity}</h5>
+                <h5 className="price-text my-2 fw-bold">Price: ${price}</h5>
+                <h5 className="quantity-text py-1 fw-bold">Quantity: {quantity}</h5>
               </div>
               <div>
-                <h5 className="my-2">Supplier: {supplier}</h5>
-                <div className="py-1">
+                <p className="supplier-text my-2">Supplier: {supplier}</p>
+                <div className="py-1 fw-bold">
                   <FontAwesomeIcon className="text-warning" icon={faStar} />
                   <FontAwesomeIcon className="text-warning" icon={faStar} />
                   <FontAwesomeIcon className="text-warning" icon={faStar} />

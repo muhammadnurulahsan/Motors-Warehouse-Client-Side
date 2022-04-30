@@ -26,7 +26,7 @@
     "quantity": "100",
     "supplier": "SAIC Motor",
     "img": "https://web-img.netlify.app/03.jpg",
-    "rate": 3.4,
+    "rate": 4.4,
     "description": "The Silverado 2500HD and 3500HD have a standard gas-powered 6.6-liter V-8 that makes 401 horsepower and mates to a six-speed automatic transmission.  6.6-liter V-8 carries over from the previous generation."
   },
   {
@@ -37,7 +37,7 @@
     "supplier": "BMW Group",
     "img": "https://web-img.netlify.app/04.jpg",
     "rate": 4.8,
-    "description": "Yes, the 2021 Hyundai Tucson is a good compact SUV . The Tucson has a five-seat interior with nicely contoured seats, an easy-to-use infotainment system, and lots to drive day to day, and it has a decent amount of cargo space."
+    "description": "Yes, the 2021 Hyundai Tucson is a good compact SUV . The Tucson has a five-seat interior with nicely contoured seats, easy-to-use infotainment system, and lots to drive day to day, and it has a decent amount of cargo space."
   },
   {
     "_id": "05",
@@ -57,7 +57,7 @@
     "supplier": "Ford Motor",
     "img": "https://web-img.netlify.app/06.jpg",
     "rate": 4.2,
-    "description": "The Malibu is powered by a standard 160-horsepower, turbocharged 1.5-liter four-cylinder engine working with a six-speed automatic transmission or an optional 250-hp, turbocharged 2.0. All Malibus are front-wheel drive."
+    "description": "The Malibu is powered by a standard 160-horsepower, turbocharged 1.5-liter four-cylinder engine working with a six-speed automatic transmission optional 250-hp, turbocharged 2.0. All Malibus are front-wheel drive."
   },
   {
     "_id": "07",

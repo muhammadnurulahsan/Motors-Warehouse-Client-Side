@@ -6,7 +6,7 @@ import { faCar } from "@fortawesome/free-solid-svg-icons";
 const ExtraPart = () => {
   return (
     <div>
-      <h1 className="title-text py-5 mx-4">
+      <h1 className="title-text py-5 mb-5 mx-4">
         What do <span className="text-warning">You Want?</span>
       </h1>
       <div className="extra-banner">

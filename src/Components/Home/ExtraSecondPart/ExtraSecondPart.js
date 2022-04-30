@@ -23,7 +23,7 @@ const ExtraSecondPart = () => {
         <div className="col-md-3 col-sm-1 mb-5 pb-5 mb-sm-0 pb-sm-0">
           <div className="border-0 d-lg-flex d-md-flex shadow-lg px-4 pt-4">
             <div className="me-4">
-              <FontAwesomeIcon icon={faGaugeHigh} className="fa-4x pb-5" />
+              <FontAwesomeIcon icon={faGaugeHigh} className="fa-4x pb-2" />
             </div>
             <div className="card-body px-0">
               <h4 className="title-font fw-bold">WIDE RANGE OF BRANDS</h4>
@@ -38,7 +38,7 @@ const ExtraSecondPart = () => {
         <div className="col-md-3 col-sm-1 mb-5 pb-5 mb-sm-0 pb-sm-0 ">
           <div className="border-0 d-lg-flex d-md-flex shadow-lg px-4 pt-4">
             <div className="me-4">
-              <FontAwesomeIcon icon={faComment} className="fa-4x pb-5" />
+              <FontAwesomeIcon icon={faComment} className="fa-4x pb-2" />
             </div>
             <div className="card-body border-none px-0">
               <h4 className="title-font fw-bold">SERVICE & MAINTENANCE</h4>
@@ -53,7 +53,7 @@ const ExtraSecondPart = () => {
         <div className="col-md-3 col-sm-1 mb-0 sm-mb-5">
           <div className="border-0 d-lg-flex d-md-flex shadow-lg px-4 pt-4">
             <div className="me-4">
-              <FontAwesomeIcon icon={faClipboardList} className="fa-4x pb-5" />
+              <FontAwesomeIcon icon={faClipboardList} className="fa-4x pb-2" />
             </div>
             <div className="card-body border-none px-0">
               <h4 className="title-font fw-bold">WIDE RANGE OF BRANDS</h4>

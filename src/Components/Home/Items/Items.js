@@ -9,15 +9,15 @@ const Items = () => {
   const [items] = useItems();
   return (
     <div>
-      <div className="mt-5">
-        <h1 className="title-text">
+      <div className="mt-5 pt-5">
+        <h1 className="title-text mx-5">
           INVENTORY RECENT <span className="text-warning">CARS</span>
         </h1>
-        <h4 className="text-center my-5">
+        <h4 className="text-center my-5 mx-4">
           Discover the latest range of Hyundai car models at Motors.
         </h4>
       </div>
-      <div className="container pb-5">
+      <div className="container">
         <div className="row row-cols-1 row-cols-md-3">
           {items.slice(0, 6).map((items) => (
             <ItemsCard key={items._id} items={items}></ItemsCard>
