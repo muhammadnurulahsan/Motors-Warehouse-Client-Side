@@ -118,11 +118,6 @@
     margin-left: 10px;
     margin-right: 10px;
   }
-  .register-form-submit {
-    width: 60%;
-    margin-right: 80px;
-    margin-left: 70px;
-  }
   .register-input-field input {
     width: 280px;
   }
@@ -139,9 +134,7 @@
     margin-left: 10px;
     margin-right: 10px;
   }
-  .register-form-submit {
-    width: 60%;
-  }
+  
   .register-input-field input {
     width: 270px !important;
   }

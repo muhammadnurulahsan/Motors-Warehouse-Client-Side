@@ -101,16 +101,11 @@
     background-image: none;
     width: 100%;
   }
-  .login-form{
+  .login-form {
     width: 380px;
     left: 0;
   }
-  .login-form-submit{
-    width: 60%;
-    margin-right: 80px;
-    margin-left: 80px;
-  }
-  .input-field input{
+  .input-field input {
     width: 310px;
   }
 }
@@ -119,17 +114,12 @@
     background-image: none;
     width: 100%;
   }
-  .login-form{
+  .login-form {
     width: 350px;
     left: 0;
     overflow: hidden;
   }
-  .login-form-submit{
-    width: 60%;
-    margin-right: 80px;
-    margin-left: 80px;
-  }
-  .input-field input{
+  .input-field input {
     width: 310px;
   }
 }

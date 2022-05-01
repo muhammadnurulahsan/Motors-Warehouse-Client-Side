@@ -32,7 +32,7 @@ const ResetPassword = () => {
           <h1 className="mt-4">Reset Password</h1>
 
           <form onSubmit={handleSubmit}>
-            <div className="input-field">
+            <div className="reset-input-field">
               <label htmlFor="email">Email</label>
               <div className="input-wrapper">
                 <input
@@ -46,7 +46,7 @@ const ResetPassword = () => {
               </div>
             </div>
             <div className="py-3">
-              <button type="submit" className="login-form-submit">
+              <button type="submit" className="reset-form-submit">
                 Submit
               </button>
               <ToastContainer />
