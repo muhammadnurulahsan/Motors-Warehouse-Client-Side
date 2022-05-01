@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
@@ -14,21 +14,32 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const [createUserWithEmailAndPassword, loading, error] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating] = useUpdateProfile(auth);
+
+  useEffect(() => {
+    if (user) {
+      swal({
+        title: "Account created!",
+        text: "Please check your email to verify your account.",
+        icon: "success",
+      });
+      navigate(from);
+    }
+  }, [user, from, navigate]);
 
   const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
-  if (loading || updating) {
+  if (loading || updating || user) {
     return <Loading />;
   }
 
   if (error) {
     swal({
-      title: `${error?.message}`,
+      title: "Sorry! Email already in use.",
       icon: "error",
     });
   }
@@ -39,17 +50,9 @@ const Register = () => {
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-
     if (password.length >= 6) {
       await createUserWithEmailAndPassword(email, password);
       await updateProfile({ displayName: name });
-      // window.location.href = from;
-      navigate(from);
-      swal({
-        title: "Account created!",
-        text: "Please check your email to verify your account.",
-        icon: "success",
-      });
     } else {
       swal({
         title: "Password must be at least 6 characters long.",
