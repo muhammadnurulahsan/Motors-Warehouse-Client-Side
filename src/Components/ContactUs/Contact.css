@@ -1,0 +1,68 @@
+.contact-bg-img {
+  background-image: url(./../../assets/contact-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact-normal-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.contact-title-text {
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 300;
+}
+
+.text-input{
+  width: 100%;
+}
+
+/* form{
+  overflow: hidden;
+} */
+
+.contact-form-submit {
+  width: 100%;
+  height: 49px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  color: white;
+  background-color: #484c54;
+}
+
+.card-custom-padding {
+  padding: 35px;
+}
+
+
+.contact-input-wrapper {
+  padding: 2px;
+  border-radius: 5px;
+  border: 3px solid #9f9f9f !important;
+}
+
+.msg-contact-input-wrapper {
+  border-radius: 5px;
+  border: 3px solid #9f9f9f;
+}
+
+.msg-input-field textarea {
+  width: 415px;
+  border-radius: 5px !important;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  outline: none;
+}
+
+.msg-input-field {
+  display: flex;
+  flex-direction: column;
+}

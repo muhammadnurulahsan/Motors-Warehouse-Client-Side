@@ -58,16 +58,9 @@ const Header = () => {
               <Nav.Link
                 className="text-light underline fs-5"
                 as={Link}
-                to="/our-services"
+                to="/contact-us"
               >
-                Our Services
-              </Nav.Link>
-              <Nav.Link
-                className="text-light underline fs-5"
-                as={Link}
-                to="/about-us"
-              >
-                About Us
+                Contact Us
               </Nav.Link>
             </Nav>
             <div className="d-flex">
@@ -92,11 +85,7 @@ const Header = () => {
                       </Link>
                     </div>
                   </div>
-                  <Link
-                    as={Link}
-                    to="/register"
-                    className="d-flex align-items-center ms-4 text-light text-decoration-none"
-                  >
+                  <div className="d-flex align-items-center ms-4">
                     <div className="icon text-center text-light">
                       <FontAwesomeIcon
                         className="love-icon"
@@ -104,10 +93,14 @@ const Header = () => {
                         size="xl"
                       />
                     </div>
-                    <div>
+                    <Link
+                      className="text-light text-decoration-none"
+                      as={Link}
+                      to="/register"
+                    >
                       <h6 className="m-0">Register</h6>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </>
               )}
               {user && (
@@ -158,7 +151,7 @@ const Header = () => {
               <Button
                 as={Link}
                 to="/manage-inventories"
-                className="py-3 px-4 text-light shadow none rounded-pill"
+                className="py-2 px-4 text-light shadow none rounded-pill"
                 variant="outline-secondary"
               >
                 Manage Inventories
@@ -188,7 +181,7 @@ const Header = () => {
               <Button
                 as={Link}
                 to="/my-items"
-                className="py-3 px-4 text-light shadow none rounded-pill"
+                className="py-2 px-4 text-light shadow none rounded-pill"
                 variant="outline-secondary"
               >
                 <FontAwesomeIcon

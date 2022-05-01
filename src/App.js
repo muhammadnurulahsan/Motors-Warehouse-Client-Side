@@ -12,8 +12,7 @@ import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import AddItems from "./Components/AddItems/AddItems";
 import ItemsDetail from "./Components/ItemsDetail/ItemsDetail";
 import NotFound from "./Components/NotFound/NotFound";
-import AboutUs from "./Components/AboutUs/AboutUs";
-import OurServices from "./Components/OurServices/OurServices";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import ManageInventories from "./Components/ManageInventories/ManageInventories";
 import Footer from "./Components/Footer/Footer";
 
@@ -26,8 +25,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/about-us" element={<AboutUs />}></Route>
-        <Route path="/our-services" element={<OurServices />}></Route>
+        <Route path="/contact-us" element={<ContactUs />}></Route>
         <Route path="/resetpassword" element={<ResetPassword />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route

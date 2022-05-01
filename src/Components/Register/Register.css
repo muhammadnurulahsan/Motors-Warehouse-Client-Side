@@ -1,72 +1,73 @@
-.bg-img {
-  background-image: url("../../assets/mobile.png"), url("../../assets/bg.png");
+.register-bg-img {
+  background-image: url("../../assets/mobile2.png"), url("../../assets/bg.png");
   width: 950px;
   height: 600px;
   background-size: 390px, cover;
   background-position: center top;
   background-repeat: no-repeat;
 }
-.login-form-container {
+.register-form-container {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-.login-form {
+.register-form {
   width: 500px;
   background-color: #fffbf0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem;
   position: relative;
-  top: 9px;
-  left: 500px;
+  top: 1px;
+  left: 200px;
 }
 
-.login-form h1 {
+.register-form h1 {
   font-size: 30px;
 }
 
-.input-field {
+.register-input-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.input-field label {
-  font-size: 18px;
+.register-input-field label {
+  font-size: 15px;
   margin-bottom: 8px;
   margin-left: 10px;
-  color: #000000 !important;
+  color: #050505;
 }
 
 .input-wrapper {
   padding: 2px;
-  border-radius: 5px;
-  border: 3px solid #9f9f9f !important;
+  border-radius: 7px;
+  border: 3px solid #9f9f9f;
 }
 
-.input-field input {
+.register-input-field input {
   width: 415px;
-  height: 50px;
+  height: 45px;
   border-radius: 5px;
   padding: 15px;
-  font-size: 15px;
+  font-size: 16px;
   border: none;
   background-color: #fff;
   outline: none;
 }
 
-.login-form-submit {
+.register-form-submit {
   width: 100%;
-  height: 49px;
+  height: 45px;
   border: none;
   border-radius: 5px;
   font-size: 20px;
+  margin-top: 20px;
   cursor: pointer;
   color: white;
   background-color: #ffbfd6;
@@ -77,9 +78,19 @@
   color: #020202;
 }
 
+.redirect span {
+  cursor: pointer;
+  color: #1e90c2;
+}
+
 .horizontal-divider {
   display: flex;
   align-items: center;
+}
+
+.horizontal-divider p {
+  margin: 0 10px 2px 10px;
+  color: #000000;
 }
 
 .line-right,
@@ -97,39 +108,50 @@
 
 /*responsive*/
 @media (max-width: 574px) {
-  .bg-img {
+  .register-bg-img {
     background-image: none;
-    width: 100%;
+    width: 0px;
   }
-  .login-form{
-    width: 380px;
+  .register-form {
+    width: 390px;
     left: 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
-  .login-form-submit{
+  .register-form-submit {
     width: 60%;
     margin-right: 80px;
-    margin-left: 80px;
+    margin-left: 70px;
   }
-  .input-field input{
-    width: 310px;
+  .register-input-field input {
+    width: 280px;
   }
 }
 @media (max-width: 393px) {
-  .bg-img {
+  .register-bg-img {
     background-image: none;
-    width: 100%;
+    width: 0px;
   }
-  .login-form{
+  .register-form {
     width: 350px;
     left: 0;
     overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
   }
-  .login-form-submit{
+  .register-form-submit {
     width: 60%;
-    margin-right: 80px;
-    margin-left: 80px;
   }
-  .input-field input{
-    width: 310px;
+  .register-input-field input {
+    width: 270px !important;
+  }
+  .line-right,
+  .line-left {
+    height: 1px;
+    width: 125px !important;
+    background-color: #000000;
+  }
+  .redirect {
+    font-size: small;
   }
 }
