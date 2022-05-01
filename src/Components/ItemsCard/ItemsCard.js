@@ -43,7 +43,7 @@ const ItemsCard = ({ items }) => {
             <div className="d-flex justify-content-center">
               <button
                 onClick={() => navigate(`/items/${_id}`)}
-                className="me-3 btn btn-outline-success px-5 mb-2 rounded-pill shadow-lg"
+                className="me-3 btn btn-outline-success px-4 mb-2 rounded-pill shadow-lg"
               >
                 Update
               </button>
