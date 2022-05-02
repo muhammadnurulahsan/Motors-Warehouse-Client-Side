@@ -1,0 +1,17 @@
+.manage-inventory-bg-img {
+  background-image: url(./../../assets/manage.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-body-color {
+  background-color: #d6d4d4d0;
+}
+
+.manage-title-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+    text-align: center;
+  }

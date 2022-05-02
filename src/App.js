@@ -9,12 +9,12 @@ import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import MyItems from "./Components/MyItems/MyItems";
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
-import AddItems from "./Components/AddItems/AddItems";
 import ItemsDetail from "./Components/ItemsDetail/ItemsDetail";
 import NotFound from "./Components/NotFound/NotFound";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import ManageInventories from "./Components/ManageInventories/ManageInventories";
 import Footer from "./Components/Footer/Footer";
+import AddItem from "./Components/AddItem/AddItem";
 
 function App() {
   return (
@@ -37,10 +37,10 @@ function App() {
           }
         ></Route>
         <Route
-          path="/add-items"
+          path="/add-item"
           element={
             <RequireAuth>
-              <AddItems />
+              <AddItem />
             </RequireAuth>
           }
         ></Route>

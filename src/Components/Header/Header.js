@@ -50,9 +50,9 @@ const Header = () => {
                 <Nav.Link
                   className="text-light underline fs-5"
                   as={Link}
-                  to="/add-items"
+                  to="/add-item"
                 >
-                  Add Items
+                  Add Item
                 </Nav.Link>
               )}
               <Nav.Link
@@ -151,7 +151,7 @@ const Header = () => {
               <Button
                 as={Link}
                 to="/manage-inventories"
-                className="py-2 px-4 text-light shadow none rounded-pill"
+                className="py-2 px-4 mt-3 mt-sm-0 text-light shadow none rounded-pill"
                 variant="outline-secondary"
               >
                 Manage Inventories
@@ -181,14 +181,14 @@ const Header = () => {
               <Button
                 as={Link}
                 to="/my-items"
-                className="py-2 px-4 text-light shadow none rounded-pill"
+                className="py-2 px-4 mb-3 mb-sm-0 text-light shadow none rounded-pill"
                 variant="outline-secondary"
               >
                 <FontAwesomeIcon
                   className="me-5 mt-1 position-absolute"
                   icon={faCartFlatbed}
                 />
-                <span className=" position-relative translate-middle badge rounded-pill bg-danger">
+                <span className=" position-relative top-0 translate-middle badge rounded-pill bg-danger">
                   0
                 </span>
                 My Items
