@@ -1,0 +1,23 @@
+.details-title-text {
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.items-details-bg-img {
+  background-image: url(./../../assets/bg-daitals.jpg);
+  background-repeat: no-repeat;
+  background-position: 0px -250px;
+}
+
+.items-details-input-field input {
+    width: 415px;
+    height: 45px;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+    outline: none;
+  }

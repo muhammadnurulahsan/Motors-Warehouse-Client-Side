@@ -2,7 +2,11 @@ import React from "react";
 import useItems from "../../Hooks/useItems";
 import "./ManageInventories.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCirclePlus,
+  faPenToSquare,
+  faTrashAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { swal } from "sweetalert";
 import { Link } from "react-router-dom";
 const ManageInventories = () => {
@@ -49,7 +53,9 @@ const ManageInventories = () => {
       </div>
 
       <div className="bg-body-color py-5">
-        <h1 className="manage-title-text  pb-1">Inventory Items: {items.length}</h1>
+        <h1 className="manage-title-text  pb-1">
+          Inventory Items: {items.length}
+        </h1>
         <div className="container d-flex justify-content-end mb-4">
           <Link to="/add-item">
             <button className="btn btn-outline-dark">
@@ -59,39 +65,74 @@ const ManageInventories = () => {
           </Link>
         </div>
         <div className="container pb-5">
-          <div className="row bg-white rounded shadow p-4">
-            <div className="">
+          <div className="bg-white rounded shadow p-4">
+            <div className="px-2 py-2 px-sm-5 py-sm-5">
               <table className="table">
                 <thead>
-                  <tr className="text-center">
+                  <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Booking ID</th>
-                    <th scope="col">Booking ID</th>
-                    <th scope="col">Booking ID</th>
-                    <th scope="col">User Name</th>
-                    <th scope="col">User Email</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Product Name</th>
+                    <th className="text-center" scope="col">
+                      Quantity
+                    </th>
+                    <th className="text-center" scope="col">
+                      Supplier
+                    </th>
+                    <th className="text-center" scope="col">
+                      Rating
+                    </th>
+                    <th className="text-center" scope="col">
+                      Email
+                    </th>
+                    <th className="text-center" scope="col">
+                      Status
+                    </th>
+                    <th className="text-center" scope="col">
+                      Action
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {items?.map((item, index) => (
-                    <tr className="text-center">
-                      <th scope="roEDw">{index + 1}</th>
-                      <td>{item?._id}</td>
-                      <td>{item?.name}</td>
-                      <td>{item?.email}</td>
-                      <td>
+                    <tr>
+                      <th className="pt-3" scope="row">
+                        {index + 1}
+                      </th>
+                      <td className="py-2">
+                        <img
+                          className="rounded"
+                          width="60px"
+                          src={item?.img}
+                          alt="img"
+                        />
+                      </td>
+                      <td width="300px" className="pt-3">
+                        {item?.name}
+                      </td>
+                      <td className="text-center pt-3">{item?.quantity}</td>
+                      <td className="text-center py-3">{item?.supplier}</td>
+                      <td className="text-center pt-3">{item?.rate}</td>
+                      <td className="text-center pt-3">{item?.email}</td>
+                      <td className="text-center pt-3">
                         {item?.orderStatus === "CONFIRM" ? (
-                          <span className="badge bg-success">CONFIRMED</span>
+                          <span className="badge bg-success">Delivered</span>
                         ) : (
                           <span className="badge bg-warning">PENDING</span>
                         )}
                       </td>
-                      <td>
+                      <td width="150px" className="text-center pt-2">
+                        <Link
+                          className="text-decoration-none text-light"
+                          to={`/items/${item._id}`}
+                        >
+                          <button className="mx-3 mt-1 btn btn-primary shadow none py-1">
+                            <FontAwesomeIcon icon={faPenToSquare} size="lg" />
+                          </button>
+                        </Link>
                         <button
                           onClick={() => handleDelete(item?._id)}
-                          className="mx-1 btn btn-danger shadow-none py-1"
+                          className="mx-1 btn mt-1 btn-danger shadow none py-1"
                         >
                           <FontAwesomeIcon icon={faTrashAlt} size="lg" />
                         </button>
