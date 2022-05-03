@@ -2,6 +2,7 @@ import {
   faArrowCircleRight,
   faCartFlatbed,
   faSignInAlt,
+  faWarehouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -20,8 +21,12 @@ import {
 } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import useItems from "../../Hooks/useItems";
+import useLenth from "../../Hooks/useLenth";
 
 const Header = () => {
+  const [items] = useItems();
+  const [myItems] = useLenth()
   const [user] = useAuthState(auth);
   const handleLogOut = () => {
     auth.signOut();
@@ -151,9 +156,13 @@ const Header = () => {
               <Button
                 as={Link}
                 to="/manage-inventories"
-                className="py-2 px-4 mt-3 mt-sm-0 text-light shadow none rounded-pill"
+                className="py-2 px-4 mt-3 mt-sm-0 text-light shadow none rounded-pill position-relative"
                 variant="outline-secondary"
               >
+                <FontAwesomeIcon icon={faWarehouse} className="me-2" />
+                <span className="start-0 top-0 translate-middle badge rounded-pill bg-danger position-absolute">
+                  {items?.length}
+                </span>
                 Manage Inventories
               </Button>
             )}
@@ -181,15 +190,12 @@ const Header = () => {
               <Button
                 as={Link}
                 to="/my-items"
-                className="py-2 px-4 mb-3 mb-sm-0 text-light shadow none rounded-pill"
+                className="py-2 px-4 mb-3 mb-sm-0 text-light shadow none position-relative rounded-pill"
                 variant="outline-secondary"
               >
-                <FontAwesomeIcon
-                  className="me-5 mt-1 position-absolute"
-                  icon={faCartFlatbed}
-                />
-                <span className=" position-relative top-0 translate-middle badge rounded-pill bg-danger">
-                  0
+                <FontAwesomeIcon className="me-2 mt-1" icon={faCartFlatbed} />
+                <span className=" position-absolute start-100 top-0 translate-middle badge rounded-pill bg-danger">
+                  {myItems?.length}
                 </span>
                 My Items
               </Button>

@@ -57,7 +57,7 @@ const Blogs = () => {
           What Difference in Between JavaScript & NodeJS?
         </h1>
 
-        <div class="table-responsive">
+        <div className="table-responsive">
           <table className="table normal-text table-striped table-bordered">
             <thead>
               <tr className="table-title-text">
@@ -209,7 +209,7 @@ const Blogs = () => {
           What Differences in between SQL and NoSQL Databases.?
         </h1>
 
-        <div class="table-responsive">
+        <div className="table-responsive">
           <table className="table normal-text table-striped table-bordered">
             <thead>
               <tr className="table-title-text">

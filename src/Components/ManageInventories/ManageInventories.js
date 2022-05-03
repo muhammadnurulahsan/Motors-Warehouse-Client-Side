@@ -7,7 +7,7 @@ import {
   faPenToSquare,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { swal } from "sweetalert";
+import swal from "sweetalert";
 import { Link } from "react-router-dom";
 const ManageInventories = () => {
   const [items, setItems] = useItems();
@@ -15,28 +15,30 @@ const ManageInventories = () => {
   const handleDelete = (id) => {
     swal({
       title: "Are You Sure to Delete?",
-      text: "If deleted, items will be canceled!",
+      text: "If OK, items will be deleted!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://frozen-ocean-73745.herokuapp.com/orders/${id}`, {
+        fetch(`http://localhost:5000/items/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.deletedCount > 0) {
-              swal("Booking has been Canceled!", {
+            if (data.acknowledged) {
+              swal("Item has been deleted!", {
                 icon: "success",
               });
             }
-            const newItems = items.filter((item) => item._id !== id);
+            const newItems = items?.filter((item) => item._id !== id);
             setItems(newItems);
           });
       } else {
-        swal("Item Info is Safe!");
+        swal("Successfully! Item Info is Safe!", {
+          icon: "success",
+        });
       }
     });
   };
@@ -54,7 +56,7 @@ const ManageInventories = () => {
 
       <div className="bg-body-color py-5">
         <h1 className="manage-title-text  pb-1">
-          Inventory Items: {items.length}
+          Inventory Items: {items?.length}
         </h1>
         <div className="container d-flex justify-content-end mb-4">
           <Link to="/add-item">
@@ -66,7 +68,7 @@ const ManageInventories = () => {
         </div>
         <div className="container pb-5">
           <div className="bg-white rounded shadow p-4">
-            <div className="px-2 py-2 px-sm-5 py-sm-5">
+            <div className="px-2 py-2 px-sm-4 py-sm-4">
               <table className="table">
                 <thead>
                   <tr>
@@ -74,13 +76,13 @@ const ManageInventories = () => {
                     <th scope="col">Image</th>
                     <th scope="col">Product Name</th>
                     <th className="text-center" scope="col">
+                      Price
+                    </th>
+                    <th className="text-center" scope="col">
                       Quantity
                     </th>
                     <th className="text-center" scope="col">
                       Supplier
-                    </th>
-                    <th className="text-center" scope="col">
-                      Rating
                     </th>
                     <th className="text-center" scope="col">
                       Email
@@ -95,7 +97,7 @@ const ManageInventories = () => {
                 </thead>
                 <tbody>
                   {items?.map((item, index) => (
-                    <tr>
+                    <tr key={item?._id}>
                       <th className="pt-3" scope="row">
                         {index + 1}
                       </th>
@@ -108,23 +110,26 @@ const ManageInventories = () => {
                         />
                       </td>
                       <td width="300px" className="pt-3">
-                        {item?.name}
+                        {item?.productName}
                       </td>
+                      <td className="text-center pt-3">{item?.price}</td>
                       <td className="text-center pt-3">{item?.quantity}</td>
-                      <td className="text-center py-3">{item?.supplier}</td>
-                      <td className="text-center pt-3">{item?.rate}</td>
-                      <td className="text-center pt-3">{item?.email}</td>
+                      <td className="text-center py-3">{item?.supplierName}</td>
                       <td className="text-center pt-3">
-                        {item?.orderStatus === "CONFIRM" ? (
+                        {item?.supplierEmail}
+                      </td>
+                      <td className="text-center pt-3">
+                        <button
+                          // onClick={() => handleDelivered()}
+                          className="btn p-0 shadow-none"
+                        >
                           <span className="badge bg-success">Delivered</span>
-                        ) : (
-                          <span className="badge bg-warning">PENDING</span>
-                        )}
+                        </button>
                       </td>
                       <td width="150px" className="text-center pt-2">
                         <Link
                           className="text-decoration-none text-light"
-                          to={`/items/${item._id}`}
+                          to={`/items/${item?._id}`}
                         >
                           <button className="mx-3 mt-1 btn btn-primary shadow none py-1">
                             <FontAwesomeIcon icon={faPenToSquare} size="lg" />

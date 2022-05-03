@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const useItemsDetail = (id) => {
+const useItemsDetail = () => {
+  const { id } = useParams();
   const [items, setItems] = useState({});
 
   useEffect(() => {
@@ -8,8 +10,8 @@ const useItemsDetail = (id) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
-  }, [id]);
-  return [items];
+  }, [id, items, setItems]);
+  return [items, id];
 };
 
 export default useItemsDetail;

@@ -14,6 +14,7 @@ import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import "react-toastify/dist/ReactToastify.css";
 import swal from "sweetalert";
+import useToken from "../../Hooks/useToken";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -33,6 +34,12 @@ const Login = () => {
 
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
+
+  const [token] = useToken(user);
+  
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   useEffect(() => {
     if (user || fbUser || gitUser || googleUser) {
@@ -105,10 +112,7 @@ const Login = () => {
               </div>
               <div className="d-flex justify-content-between">
                 <p className="my-2">Forget your Password?</p>
-                <Link
-                  className="text-decoration-none my-2"
-                  to="/resetpassword"
-                >
+                <Link className="text-decoration-none my-2" to="/resetpassword">
                   Reset Password
                 </Link>
               </div>
@@ -148,10 +152,7 @@ const Login = () => {
             </div>
             <p className="redirect">
               Don't have an account?
-              <Link
-                className="ms-3 text-decoration-none"
-                to="/register"
-              >
+              <Link className="ms-3 text-decoration-none" to="/register">
                 Please Register!
               </Link>
             </p>

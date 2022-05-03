@@ -1,9 +1,56 @@
 import React from "react";
 import "./AddItem.css";
+import swal from "sweetalert";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { useNavigate } from "react-router-dom";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      e.target.productName.value === "" ||
+      e.target.price.value === "" ||
+      e.target.quantity.value === "" ||
+      e.target.img.value === "" ||
+      e.target.rating.value === "" ||
+      e.target.description.value === ""
+    ) {
+      swal({
+        title: "Please fill up all the fields",
+        text: "Your Input fields is Empty!",
+        icon: "error",
+      });
+    } else {
+      swal({
+        title: "Successfully! Added Your Item",
+        text: "Now You Can Check It!",
+        icon: "success",
+      });
+      navigate("/my-items");
+      const fromData = {
+        productName: e.target.productName.value,
+        price: e.target.price.value,
+        quantity: parseInt(e.target.quantity.value),
+        supplierName: e.target.supplierName.value,
+        supplierEmail: e.target.supplierEmail.value,
+        img: e.target.img.value,
+        rating: e.target.rating.value,
+        description: e.target.description.value,
+      };
+      fetch("http://localhost:5000/items", {
+        method: "POST",
+        body: JSON.stringify(fromData),
+        headers: {
+          'authorization': `${user.email} ${localStorage.getItem('accessToken')}`,
+          "Content-type": "application/json",
+        },
+      });
+    }
   };
 
   return (
@@ -26,12 +73,12 @@ const AddItem = () => {
                 <div className="add-item-form">
                   <form onSubmit={handleSubmit}>
                     <div className="input-field">
-                      <label htmlFor="name">Product Name</label>
+                      <label htmlFor="productName">Product Name</label>
                       <div className="add-item-input-wrapper">
                         <input
                           type="text"
-                          name="name"
-                          id="name"
+                          name="productName"
+                          id="productName"
                           placeholder="Enter Your Product Name*"
                           className="normal-text w-100"
                         />
@@ -39,24 +86,24 @@ const AddItem = () => {
                     </div>
                     <div className="d-flex justify-content-center mt-3 flex-sm-wrap">
                       <div className="half-input-field me-3">
-                        <label htmlFor="name mt-2">Product Price</label>
+                        <label htmlFor="price mt-2">Product Price</label>
                         <div className="mt-2 half-input-wrapper">
                           <input
                             type="number"
                             name="price"
-                            id="name"
+                            id="price"
                             placeholder="Enter Your Product Price*"
                             className="normal-text"
                           />
                         </div>
                       </div>
                       <div className="half-input-field">
-                        <label htmlFor="name mt-2">Product Quantity</label>
+                        <label htmlFor="quantity mt-2">Product Quantity</label>
                         <div className="mt-2 half-input-wrapper">
                           <input
                             type="number"
                             name="quantity"
-                            id="name"
+                            id="quantity"
                             placeholder="Enter Your Product Quantity*"
                             className="normal-text"
                           />
@@ -65,24 +112,24 @@ const AddItem = () => {
                     </div>
                     <div className="d-flex justify-content-center mt-3 flex-sm-wrap">
                       <div className="half-input-field me-3">
-                        <label htmlFor="name mt-2">Image URL</label>
+                        <label htmlFor="img mt-2">Image URL</label>
                         <div className="mt-2 half-input-wrapper">
                           <input
                             type="link"
                             name="img"
-                            id="name"
+                            id="img"
                             placeholder="Enter Your Image URL*"
                             className="normal-text"
                           />
                         </div>
                       </div>
                       <div className="half-input-field">
-                        <label htmlFor="name mt-2">Product Rating</label>
+                        <label htmlFor="rating mt-2">Product Rating</label>
                         <div className="mt-2 half-input-wrapper">
                           <input
-                            type="number"
+                            // type="number"
                             name="rating"
-                            id="name"
+                            id="rating"
                             placeholder="Enter Your Product Rating*"
                             className="normal-text"
                           />
@@ -91,24 +138,28 @@ const AddItem = () => {
                     </div>
                     <div className="d-flex justify-content-center mt-3 flex-sm-wrap">
                       <div className="half-input-field me-3">
-                        <label htmlFor="name mt-2">Supplier Name</label>
+                        <label htmlFor="supplierName mt-2">Supplier Name</label>
                         <div className="mt-2 half-input-wrapper">
                           <input
+                            disabled
                             type="text"
-                            name="supplierName"
-                            id="name"
+                            value={user.displayName}
+                            id="supplierName"
                             placeholder="Enter Your Supplier Name*"
                             className="normal-text"
                           />
                         </div>
                       </div>
                       <div className="half-input-field">
-                        <label htmlFor="name mt-2">Supplier Email</label>
+                        <label htmlFor="supplierEmail mt-2">
+                          Supplier Email
+                        </label>
                         <div className="mt-2 half-input-wrapper">
                           <input
+                            disabled
                             type="email"
-                            name="supplierEmail"
-                            id="name"
+                            value={user.email}
+                            id="supplierEmail"
                             placeholder="Enter Your Supplier Email*"
                             className="normal-text"
                           />
@@ -124,7 +175,7 @@ const AddItem = () => {
                         <textarea
                           type="text"
                           name="description"
-                          id="text"
+                          id="description"
                           className="normal-text  w-100"
                           placeholder="Enter Your Product Description*"
                         />

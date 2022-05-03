@@ -1,152 +1,167 @@
 [
   {
-    "_id": "01",
-    "name": "Acura ILX 2022",
+    
+    "productName": "Acura ILX 2022",
     "price": 21000,
-    "quantity": "100",
-    "supplier": "Hyundai",
+    "quantity": 100,
+    "supplierName": "Hyundai",
+    "supplierEmail": "hyundai@gmail.com",
     "img": "https://web-img.netlify.app/01.jpg",
-    "rate": 4.9,
+    "rating": 4.9,
     "description": "Acura ILX models are available with a 2.4 L-liter gas engine, with output up to 201 hp, on engine type. The 2021 Acura ILX comes with front wheel drive. transmissions include: 8-speed automated manual. "
   },
   {
-    "_id": "02",
-    "name": "TRAILBLAZER 21",
+    
+    "productName": "TRAILBLAZER 21",
     "price": 28000,
-    "quantity": "100",
-    "supplier": "Stellated",
+    "quantity": 100,
+    "supplierName": "Stellated",
+    "supplierEmail": "stellated@gmail.com",
     "img": "https://web-img.netlify.app/02.jpg",
-    "rate": 4.7,
+    "rating": 4.7,
     "description": "The all-new 2021 Chevrolet Trailblazer is a decent subcompact SUV . The Trailblazer offers an upscale and spacious interior, a user-friendly infotainment system, forward collision warning, and lane keep assist."
   },
   {
-    "_id": "03",
-    "name": "Silverado 2021",
+    
+    "productName": "Silverado 2021",
     "price": 24000,
-    "quantity": "100",
-    "supplier": "SAIC Motor",
+    "quantity": 100,
+    "supplierName": "SAIC Motor",
+    "supplierEmail": "saicmotor@gmail.com",
     "img": "https://web-img.netlify.app/03.jpg",
-    "rate": 4.4,
+    "rating": 4.4,
     "description": "The Silverado 2500HD and 3500HD have a standard gas-powered 6.6-liter V-8 that makes 401 horsepower and mates to a six-speed automatic transmission.  6.6-liter V-8 carries over from the previous generation."
   },
   {
-    "_id": "04",
-    "name": "HYUNDAI 2021 TUCSON",
+    
+    "productName": "HYUNDAI 2021 TUCSON",
     "price": 29000,
-    "quantity": "100",
-    "supplier": "BMW Group",
+    "quantity": 100,
+    "supplierName": "BMW Group",
+    "supplierEmail": "bmwgroup@gmail.com",
     "img": "https://web-img.netlify.app/04.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "Yes, the 2021 Hyundai Tucson is a good compact SUV . The Tucson has a five-seat interior with nicely contoured seats, easy-to-use infotainment system, and lots to drive day to day, and it has a decent amount of cargo space."
   },
   {
-    "_id": "05",
-    "name": "2017 Camry Trims",
+    
+    "productName": "2017 Camry Trims",
     "price": 21000,
-    "quantity": "100",
-    "supplier": "GL Motors",
+    "quantity": 100,
+    "supplierName": "GL Motors",
+    "supplierEmail": "glmotors@gmail.com",
     "img": "https://web-img.netlify.app/05.jpg",
-    "rate": 4.5,
+    "rating": 4.5,
     "description": "The 2017 Camry is available in four different options and XLE are also available as hybrids. The lowest trim, the LE, offers all of the standard features, while the higher trims add more luxurious features and amenities."
   },
   {
-    "_id": "06",
-    "name": "CHEVROLET Malibus 2017",
+    
+    "productName": "CHEVROLET Malibus 2017",
     "price": 22000,
-    "quantity": "100",
-    "supplier": "Ford Motor",
+    "quantity": 100,
+    "supplierName": "Ford Motor",
+    "supplierEmail": "fordmotor@gmail.com",
     "img": "https://web-img.netlify.app/06.jpg",
-    "rate": 4.2,
+    "rating": 4.2,
     "description": "The Malibu is powered by a standard 160-horsepower, turbocharged 1.5-liter four-cylinder engine working with a six-speed automatic transmission optional 250-hp, turbocharged 2.0. All Malibus are front-wheel drive."
   },
   {
-    "_id": "07",
-    "name": "ACURA TLX 2021",
+    
+    "productName": "ACURA TLX 2021",
     "price": 26000,
-    "quantity": "100",
-    "supplier": "Daimler",
+    "quantity": 100,
+    "supplierName": "Daimler",
+    "supplierEmail": "daimler@gmail.com",
     "img": "https://web-img.netlify.app/07.jpg",
-    "rate": 3.5,
+    "rating": 3.5,
     "description": "The 2021 TLX pushes the limits of performance, tech, and design. The TLX is ready with an exhilarating 272-HP 108 VTEC® engine that befits the premium amenities and alluring, sculpted body. Step up to Type S levels."
   },
   {
-    "_id": "08",
-    "name": "CHEVROLET SUBURBAN 2020",
+    
+    "productName": "CHEVROLET SUBURBAN 2020",
     "price": 23000,
-    "quantity": "100",
-    "supplier": "Toyota Motor",
+    "quantity": 100,
+    "supplierName": "Toyota Motor",
+    "supplierEmail": "toyotamotor@gmail.com",
     "img": "https://web-img.netlify.app/08.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "What Is the 2020 Chevrolet Suburban? The Chevrolet Suburban is a full-size SUV that can seat up to nine people in three rows. The standard engine is a 355-horsepower, 5.3-liter V-8 that works with a six-speed automatic."
   },
   {
-    "_id": "09",
-    "name": "KIA SHORTAGE 2021 SUV New",
+    
+    "productName": "KIA SHORTAGE 2021 SUV New",
     "price": 22000,
-    "quantity": "100",
-    "supplier": "Voklas Group",
+    "quantity": 100,
+    "supplierName": "Voklas Group",
+    "supplierEmail": "voklasgroup@gmail.com",
     "img": "https://web-img.netlify.app/09.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "Kia Sportage models are available with a 2.4 L-liter gas engine, with output up to 181 hp, depending on engine type. The 2021 Kia Shortage comes with front wheel drive, and all wheel drive 6-speed shiftable automatic.."
   },
   {
-    "_id": "10",
-    "name": "MAZDA CX 30 SPECIAL 2017",
+    
+    "productName": "MAZDA CX 30 SPECIAL 2017",
     "price": 24000,
-    "quantity": "100",
-    "supplier": "Hyundai",
+    "quantity": 100,
+    "supplierName": "Hyundai",
+    "supplierEmail": "hyundai@gmail.com",
     "img": "https://web-img.netlify.app/10.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "The Mazda CX-30 is a subcompact crossover SUV produced by Mazda. Based on the fourth-generation Mazda3, it debuted at the 2019 to slot in between the CX-3 and the CX-5. It went on sale in Japan on 24 October 2019."
   },
   {
-    "_id": "11",
-    "name": "BMW M440I 2021 Coupe",
+    
+    "productName": "BMW M440I 2021 Coupe",
     "price": 27000,
-    "quantity": "100",
-    "supplier": "Stellated",
+    "quantity": 100,
+    "supplierName": "Stellated",
+    "supplierEmail": "stellated@gmail.com",
     "img": "https://web-img.netlify.app/11.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "The BMW M440i sDrive Coupe, mechanically, is nearly identical to the xDrive car, just without a driven axle at the front. That means it uses the same B58 3.0 liter turbocharged inline-six engine — with 48-volt mild-hybrid.."
   },
   {
-    "_id": "12",
-    "name": "BMW M5 SPORT EDITION 2020",
+    
+    "productName": "BMW M5 SPORT EDITION 2020",
     "price": 29000,
-    "quantity": "100",
-    "supplier": "SAIC Motor",
+    "quantity": 100,
+    "supplierName": "SAIC Motor",
+    "supplierEmail": "saicmotor@gmail.com",
     "img": "https://web-img.netlify.app/12.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "Sporting a twin-turbo 4.4-liter V-8 with 600 horsepower and 553 lb-ft of torque, the M5 is mighty quick. At our test track, it launched to 60 mph in 2.8 seconds and snapped off a 10.9-second quarter-mile time at 129 mph."
   },
   {
-    "_id": "13",
-    "name": "HYUNDAI VIOLATER 2015 Coupe",
+    
+    "productName": "HYUNDAI VIOLATER 2015 Coupe",
     "price": 23000,
-    "quantity": "100",
-    "supplier": "BMW Group",
+    "quantity": 100,
+    "supplierName": "BMW Group",
+    "supplierEmail": "bmwgroup@gmail.com",
     "img": "https://web-img.netlify.app/13.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "The 2015 Hyundai Veloster comes standard with front-wheel drive and a 1.6-liter, direct-injection four-cylinder engine. It produces 138 horsepower when teamed with a six-speed manual transmission, but that number drops to 132."
   },
   {
-    "_id": "14",
-    "name": "KIA SOUL 2015 Wagon New",
+    
+    "productName": "KIA SOUL 2015 Wagon New",
     "price": 25000,
-    "quantity": "100",
-    "supplier": "Honda Motor",
+    "quantity": 100,
+    "supplierName": "Honda Motor",
+    "supplierEmail": "hondamotor@gmail.com",
     "img": "https://web-img.netlify.app/14.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "The front-wheel-drive 2015 Kia Soul is offered with two different engines. The base Soul gets a 1.6-liter four-cylinder with 130 horsepower and 118 pound-feet of torque. A six-speed manual transmission is standard."
   },
   {
-    "_id": "15",
-    "name": "CHEVROLET SILVERED HD 2021",
+    
+    "productName": "CHEVROLET SILVERED HD 2021",
     "price": 27000,
-    "quantity": "100",
-    "supplier": "GL Motors",
+    "quantity": 100,
+    "supplierName": "GL Motors",
+    "supplierEmail": "glmotors@gmail.com",
     "img": "https://web-img.netlify.app/15.jpg",
-    "rate": 4.8,
+    "rating": 4.8,
     "description": "The Silverado 2500HD and 3500HD have a standard gas-powered 6.6-liter V-8 that makes 401 horsepower and 464 lb-ft of torque and mates to a six-speed automatic transmission.carries over from the previous generation."
   }
 ]

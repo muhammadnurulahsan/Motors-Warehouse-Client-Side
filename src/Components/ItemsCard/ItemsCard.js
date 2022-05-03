@@ -1,10 +1,24 @@
 import React from "react";
 import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./ItemsCard.css";
+import axios from "axios";
 
 const ItemsCard = ({ items }) => {
+  const [user] = useAuthState(auth);
+  const { id } = useParams();
+  
+  const handleDelivered = () => {
+    const newQuantity = parseInt(items.quantity) - 1;
+    axios.put(`http://localhost:5000/items/${id}`, {
+        newQuantity,
+      })
+      .then((res) => console.log("updated"));
+  };
+
   const { _id, name, img, price, rate, quantity, supplier, description } =
     items;
 
@@ -22,7 +36,9 @@ const ItemsCard = ({ items }) => {
             <div className="d-flex justify-content-between">
               <div className="">
                 <h5 className="price-text my-2 fw-bold">Price: ${price}</h5>
-                <h5 className="quantity-text py-1 fw-bold">Quantity: {quantity}</h5>
+                <h5 className="quantity-text py-1 fw-bold">
+                  Quantity: {quantity}
+                </h5>
               </div>
               <div>
                 <p className="supplier-text my-2">Supplier: {supplier}</p>
@@ -48,7 +64,12 @@ const ItemsCard = ({ items }) => {
                 Update
               </button>
               <button
-                // onClick={() => navigate(`/services/${_id}`)}
+                // onClick={() => handleDelivered()}
+                onClick={
+                  user
+                    ? () => handleDelivered()
+                    : () => navigate("/login")
+                }
                 className="btn btn-outline-warning px-5 mb-2 rounded-pill shadow-lg"
               >
                 Delivered

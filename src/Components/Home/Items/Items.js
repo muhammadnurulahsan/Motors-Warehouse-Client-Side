@@ -3,10 +3,11 @@ import "./Items.css";
 import useItems from "./../../../Hooks/useItems";
 import ItemsCard from "./../../ItemsCard/ItemsCard";
 import { useNavigate } from "react-router-dom";
+import Loading from "./../../Loading/Loading";
 
 const Items = () => {
   const navigate = useNavigate();
-  const [items] = useItems();
+  const [items, isLoading] = useItems();
   return (
     <div>
       <div className="mt-5 pt-5">
@@ -18,11 +19,15 @@ const Items = () => {
         </h4>
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-3">
-          {items.slice(0, 6).map((items) => (
-            <ItemsCard key={items._id} items={items}></ItemsCard>
-          ))}
-        </div>
+        {isLoading === true ? (
+          <Loading></Loading>
+        ) : (
+          <div className="row row-cols-1 row-cols-md-3">
+            {items?.slice(0, 6).map((items) => (
+              <ItemsCard key={items._id} items={items}></ItemsCard>
+            ))}
+          </div>
+        )}
         <div className="d-flex justify-content-center my-5 pt-5">
           <button
             className="btn btn-outline-secondary py-2 px-5 fs-5 shadow-lg rounded-pill"
