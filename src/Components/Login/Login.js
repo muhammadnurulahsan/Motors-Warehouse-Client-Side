@@ -36,7 +36,7 @@ const Login = () => {
     useSignInWithGoogle(auth);
 
   const [token] = useToken(user);
-  
+
   if (token) {
     navigate(from, { replace: true });
   }
