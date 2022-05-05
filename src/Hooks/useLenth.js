@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import axiosPrivate from "../Api/axiosPrivate";
 import auth from "../firebase.init";
 
 const useLenth = () => {
@@ -9,15 +9,24 @@ const useLenth = () => {
   const [user] = useAuthState(auth);
   const [myItems, setMyItems] = useState([]);
   const email = user?.email;
+
   useEffect(() => {
-    axios
-      .get(`https://motors-warehouse.herokuapp.com/items?email=${email}`, {
-        headers: { authorization: `${localStorage.getItem("token")}` },
-      })
-      .then((data) => {
-        setMyItems(data.data);
-      });
-  }, [user, email, myItems, navigate]);
+    const getItems = async () => {
+      const url = `https://motors-warehouse.herokuapp.com/user?email=${email}`;
+      try {
+        const { data } = await axiosPrivate.get(url);
+        setMyItems(data);
+      } catch (error) {
+        console.log(error.massage);
+        if (error.response.status === 401 || error.response.status === 403) {
+          // navigate("/login");
+        }
+        // signOut(auth);
+      }
+    };
+    getItems();
+  }, [email, user, navigate, myItems]);
+
   return [myItems, setMyItems];
 };
 

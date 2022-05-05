@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -11,9 +11,6 @@ import swal from "sweetalert";
 
 const Register = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
-
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating] = useUpdateProfile(auth);
@@ -25,9 +22,9 @@ const Register = () => {
         text: "Please check your email to verify your account.",
         icon: "success",
       });
-      navigate(from);
+      navigate("/login");
     }
-  }, [user, from, navigate]);
+  }, [user, navigate]);
 
   const nameRef = useRef("");
   const emailRef = useRef("");

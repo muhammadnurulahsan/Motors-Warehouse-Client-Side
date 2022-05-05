@@ -24,12 +24,6 @@ const AddItem = () => {
         icon: "error",
       });
     } else {
-      swal({
-        title: "Successfully! Added Your Item",
-        text: "Now You Can Check It!",
-        icon: "success",
-      });
-      navigate("/my-items");
       const fromData = {
         productName: e.target.productName.value,
         price: e.target.price.value,
@@ -42,12 +36,19 @@ const AddItem = () => {
       };
       fetch("https://motors-warehouse.herokuapp.com/items", {
         method: "POST",
-        body: JSON.stringify(fromData),
         headers: {
-          authorization: `${user.email} ${localStorage.getItem("accessToken")}`,
-          "Content-type": "application/json",
+          "content-type": "application/json",
         },
+        body: JSON.stringify(fromData),
+      })
+        .then((res) => res.json())
+        .then((result) => console.log(result));
+      swal({
+        title: "Successfully! Added Your Item",
+        text: "Now You Can Check It!",
+        icon: "success",
       });
+      navigate("/my-items");
     }
   };
 

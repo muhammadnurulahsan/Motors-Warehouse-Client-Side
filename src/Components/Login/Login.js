@@ -5,6 +5,7 @@ import gitImg from "../../assets/github.png";
 import fbImg from "../../assets/facebook.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
+  useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithFacebook,
   useSignInWithGithub,
@@ -14,16 +15,15 @@ import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import "react-toastify/dist/ReactToastify.css";
 import swal from "sweetalert";
-import useToken from "../../Hooks/useToken";
 
 const Login = () => {
+  const [user] = useAuthState(auth);
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-
-  const [signInWithEmailAndPassword, user, loading, userError] =
+  const [signInWithEmailAndPassword, emailUser, loading, userError] =
     useSignInWithEmailAndPassword(auth);
 
   const [signInWithFacebook, fbUser, fbLoading, fbError] =
@@ -35,10 +35,22 @@ const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
 
-  const [token] = useToken(user);
-
-  if (token) {
-    navigate(from, { replace: true });
+  if (user || emailUser) {
+    const url = "https://motors-warehouse.herokuapp.com/login";
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
   }
 
   useEffect(() => {

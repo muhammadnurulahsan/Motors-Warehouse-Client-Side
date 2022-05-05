@@ -1,24 +1,28 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useToken = (user) => {
   const [token, setToken] = useState("");
+
   useEffect(() => {
-    const getToken = async () => {
-      const email = user?.user?.email;
-      if (email) {
-        const { data } = await axios.post(
-          "https://motors-warehouse.herokuapp.com/login",
-          {
-            email,
-          }
-        );
-        setToken(data.accessToken);
-        localStorage.setItem("token", data.accessToken);
-      }
-    };
-    getToken();
+    const email = user?.email;
+    const currentUser = { email: email };
+    if (email) {
+      fetch(`https://motors-warehouse.herokuapp.com/user/${email}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const token = data.token;
+          localStorage.setItem("accessToken", token);
+          setToken(token);
+        });
+    }
   }, [user]);
+
   return [token];
 };
 

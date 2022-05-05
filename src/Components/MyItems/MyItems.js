@@ -50,7 +50,7 @@ const MyItems = () => {
 
         <div className="container py-5">
           <div className="bg-white rounded shadow p-4">
-             <div className="px-2 py-2 px-sm-4 py-sm-4">
+            <div className="px-2 py-2 px-sm-4 py-sm-4">
               <table className="table">
                 <thead>
                   <tr>
