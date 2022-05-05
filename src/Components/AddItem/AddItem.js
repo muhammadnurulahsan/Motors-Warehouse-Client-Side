@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
-
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -42,11 +40,11 @@ const AddItem = () => {
         rating: e.target.rating.value,
         description: e.target.description.value,
       };
-      fetch("http://localhost:5000/items", {
+      fetch("https://motors-warehouse.herokuapp.com/items", {
         method: "POST",
         body: JSON.stringify(fromData),
         headers: {
-          'authorization': `${user.email} ${localStorage.getItem('accessToken')}`,
+          authorization: `${user.email} ${localStorage.getItem("accessToken")}`,
           "Content-type": "application/json",
         },
       });

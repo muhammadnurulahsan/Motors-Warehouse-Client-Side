@@ -10,10 +10,11 @@ import axios from "axios";
 const ItemsCard = ({ items }) => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
-  
+
   const handleDelivered = () => {
     const newQuantity = parseInt(items.quantity) - 1;
-    axios.put(`http://localhost:5000/items/${id}`, {
+    axios
+      .put(`https://motors-warehouse.herokuapp.com/items/${id}`, {
         newQuantity,
       })
       .then((res) => console.log("updated"));
@@ -66,9 +67,7 @@ const ItemsCard = ({ items }) => {
               <button
                 // onClick={() => handleDelivered()}
                 onClick={
-                  user
-                    ? () => handleDelivered()
-                    : () => navigate("/login")
+                  user ? () => handleDelivered() : () => navigate("/login")
                 }
                 className="btn btn-outline-warning px-5 mb-2 rounded-pill shadow-lg"
               >

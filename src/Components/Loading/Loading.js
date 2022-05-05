@@ -4,7 +4,7 @@ import { Spinner } from "react-bootstrap";
 const Loading = () => {
   return (
     <div
-      style={{ height: "100vh" }}
+      style={{ height: "50vh" }}
       className="w-100 d-flex justify-content-center align-items-center"
     >
       <Spinner animation="border" variant="secondary" />

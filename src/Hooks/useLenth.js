@@ -12,7 +12,8 @@ const useLenth = () => {
   const email = user?.email;
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/items?email=${email}`, {
+    axios
+      .get(`https://motors-warehouse.herokuapp.com/items?email=${email}`, {
         headers: { authorization: `${localStorage.getItem("token")}` },
       })
       .then((data) => {

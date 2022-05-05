@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 const ManageInventories = () => {
   const [items, setItems] = useItems();
 
@@ -21,7 +22,7 @@ const ManageInventories = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/items/${id}`, {
+        fetch(`https://motors-warehouse.herokuapp.com/items/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })
@@ -68,85 +69,91 @@ const ManageInventories = () => {
         </div>
         <div className="container pb-5">
           <div className="bg-white rounded shadow p-4">
-            <div className="px-2 py-2 px-sm-4 py-sm-4">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Product Name</th>
-                    <th className="text-center" scope="col">
-                      Price
-                    </th>
-                    <th className="text-center" scope="col">
-                      Quantity
-                    </th>
-                    <th className="text-center" scope="col">
-                      Supplier
-                    </th>
-                    <th className="text-center" scope="col">
-                      Email
-                    </th>
-                    <th className="text-center" scope="col">
-                      Status
-                    </th>
-                    <th className="text-center" scope="col">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {items?.map((item, index) => (
-                    <tr key={item?._id}>
-                      <th className="pt-3" scope="row">
-                        {index + 1}
+            {items.length === 0 ? (
+              <Loading></Loading>
+            ) : (
+              <div className="px-2 py-2 px-sm-4 py-sm-4">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Product Name</th>
+                      <th className="text-center" scope="col">
+                        Price
                       </th>
-                      <td className="py-2">
-                        <img
-                          className="rounded"
-                          width="60px"
-                          src={item?.img}
-                          alt="img"
-                        />
-                      </td>
-                      <td width="300px" className="pt-3">
-                        {item?.productName}
-                      </td>
-                      <td className="text-center pt-3">{item?.price}</td>
-                      <td className="text-center pt-3">{item?.quantity}</td>
-                      <td className="text-center py-3">{item?.supplierName}</td>
-                      <td className="text-center pt-3">
-                        {item?.supplierEmail}
-                      </td>
-                      <td className="text-center pt-3">
-                        <button
-                          // onClick={() => handleDelivered()}
-                          className="btn p-0 shadow-none"
-                        >
-                          <span className="badge bg-success">Delivered</span>
-                        </button>
-                      </td>
-                      <td width="150px" className="text-center pt-2">
-                        <Link
-                          className="text-decoration-none text-light"
-                          to={`/items/${item?._id}`}
-                        >
-                          <button className="mx-3 mt-1 btn btn-primary shadow none py-1">
-                            <FontAwesomeIcon icon={faPenToSquare} size="lg" />
-                          </button>
-                        </Link>
-                        <button
-                          onClick={() => handleDelete(item?._id)}
-                          className="mx-1 btn mt-1 btn-danger shadow none py-1"
-                        >
-                          <FontAwesomeIcon icon={faTrashAlt} size="lg" />
-                        </button>
-                      </td>
+                      <th className="text-center" scope="col">
+                        Quantity
+                      </th>
+                      <th className="text-center" scope="col">
+                        Supplier
+                      </th>
+                      <th className="text-center" scope="col">
+                        Email
+                      </th>
+                      <th className="text-center" scope="col">
+                        Status
+                      </th>
+                      <th className="text-center" scope="col">
+                        Action
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {items?.map((item, index) => (
+                      <tr key={item?._id}>
+                        <th className="pt-3" scope="row">
+                          {index + 1}
+                        </th>
+                        <td className="py-2">
+                          <img
+                            className="rounded"
+                            width="60px"
+                            src={item?.img}
+                            alt="img"
+                          />
+                        </td>
+                        <td width="300px" className="pt-3">
+                          {item?.productName}
+                        </td>
+                        <td className="text-center pt-3">{item?.price}</td>
+                        <td className="text-center pt-3">{item?.quantity}</td>
+                        <td className="text-center py-3">
+                          {item?.supplierName}
+                        </td>
+                        <td className="text-center pt-3">
+                          {item?.supplierEmail}
+                        </td>
+                        <td className="text-center pt-3">
+                          <button
+                            // onClick={() => handleDelivered()}
+                            className="btn p-0 shadow-none"
+                          >
+                            <span className="badge bg-success">Delivered</span>
+                          </button>
+                        </td>
+                        <td width="150px" className="text-center pt-2">
+                          <Link
+                            className="text-decoration-none text-light"
+                            to={`/items/${item?._id}`}
+                          >
+                            <button className="mx-3 mt-1 btn btn-primary shadow none py-1">
+                              <FontAwesomeIcon icon={faPenToSquare} size="lg" />
+                            </button>
+                          </Link>
+                          <button
+                            onClick={() => handleDelete(item?._id)}
+                            className="mx-1 btn mt-1 btn-danger shadow none py-1"
+                          >
+                            <FontAwesomeIcon icon={faTrashAlt} size="lg" />
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </div>
       </div>

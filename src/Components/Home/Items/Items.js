@@ -7,7 +7,7 @@ import Loading from "./../../Loading/Loading";
 
 const Items = () => {
   const navigate = useNavigate();
-  const [items, isLoading] = useItems();
+  const [items] = useItems();
   return (
     <div>
       <div className="mt-5 pt-5">
@@ -19,7 +19,7 @@ const Items = () => {
         </h4>
       </div>
       <div className="container">
-        {isLoading === true ? (
+        {items.length === 0 ? (
           <Loading></Loading>
         ) : (
           <div className="row row-cols-1 row-cols-md-3">
