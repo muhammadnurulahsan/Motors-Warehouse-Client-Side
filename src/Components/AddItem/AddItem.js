@@ -126,7 +126,7 @@ const AddItem = () => {
                         <label htmlFor="rating mt-2">Product Rating</label>
                         <div className="mt-2 half-input-wrapper">
                           <input
-                            // type="number"
+                            type="number"
                             name="rating"
                             id="rating"
                             placeholder="Enter Your Product Rating*"

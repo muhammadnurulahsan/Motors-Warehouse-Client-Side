@@ -6,6 +6,7 @@ import auth from "../firebase.init";
 
 const useLenth = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const [user] = useAuthState(auth);
   const [myItems, setMyItems] = useState([]);
   const email = user?.email;
@@ -16,6 +17,7 @@ const useLenth = () => {
       try {
         const { data } = await axiosPrivate.get(url);
         setMyItems(data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error.massage);
         if (error.response.status === 401 || error.response.status === 403) {
@@ -25,9 +27,9 @@ const useLenth = () => {
       }
     };
     getItems();
-  }, [email, user, navigate, myItems]);
+  }, [email, user, navigate, myItems, isLoading]);
 
-  return [myItems, setMyItems];
+  return [myItems, setMyItems, isLoading];
 };
 
 export default useLenth;

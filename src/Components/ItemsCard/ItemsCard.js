@@ -20,7 +20,7 @@ const ItemsCard = ({ items }) => {
       .then((res) => console.log("updated"));
   };
 
-  const { _id, name, img, price, rate, quantity, supplier, description } =
+  const { _id, productName, img, price, rate, quantity, supplier, description } =
     items;
 
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const ItemsCard = ({ items }) => {
             <img src={img} className="card-img-top rounded" alt="" />
           </div>
           <div className="card-body mx-3">
-            <h1 className="name-text">{name}</h1>
+            <h1 className="name-text">{productName}</h1>
             <div className="d-flex justify-content-between">
               <div className="">
                 <h5 className="price-text my-2 fw-bold">Price: ${price}</h5>

@@ -2,6 +2,7 @@
   background-image: url(./../../assets/manage.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  height: 100%;
 }
 
 .bg-body-color {
@@ -9,9 +10,9 @@
 }
 
 .manage-title-text {
-    font-family: "Montserrat", sans-serif;
-    font-size: 50px;
-    line-height: 60px;
-    font-weight: 700;
-    text-align: center;
-  }
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 700;
+  text-align: center;
+}

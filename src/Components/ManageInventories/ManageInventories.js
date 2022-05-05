@@ -126,7 +126,6 @@ const ManageInventories = () => {
                         </td>
                         <td className="text-center pt-3">
                           <button
-                            // onClick={() => handleDelivered()}
                             className="btn p-0 shadow-none"
                           >
                             <span className="badge bg-success">Delivered</span>
