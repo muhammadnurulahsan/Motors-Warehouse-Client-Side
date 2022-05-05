@@ -9,6 +9,7 @@ import "./MyItems.css";
 
 const MyItems = () => {
   const [myItems, setMyItems] = useLenth();
+  console.log(myItems);
   const handleDelete = (id) => {
     swal({
       title: "Are You Sure to Delete?",
@@ -51,9 +52,9 @@ const MyItems = () => {
 
         <div className="container py-5">
           <div className="bg-white rounded shadow p-4">
-            {myItems.length === 0 ? (
+            {/* {myItems?.length === 0 ? (
               <Loading></Loading>
-            ) : (
+            ) : ( */}
               <div className="px-2 py-2 px-sm-4 py-sm-4">
                 <table className="table">
                   <thead>
@@ -132,7 +133,7 @@ const MyItems = () => {
                   </tbody>
                 </table>
               </div>
-            )}
+            {/* )} */}
           </div>
         </div>
       </div>
