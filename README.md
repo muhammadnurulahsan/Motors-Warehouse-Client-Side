@@ -8,8 +8,6 @@ A warehouse management system (WMS) is software made to help users improve the e
 
 • Stack Overflow Question:- [Link](https://stackoverflow.com/questions/72163149/what-is-the-appropriate-method-to-create-this-user-icon-layout-in-custom-css)
 
-• Heroku Database:- [Link](https://motors-warehouse.herokuapp.com)
-
 What technology or assets I have used for building this website.
 
 • JSX

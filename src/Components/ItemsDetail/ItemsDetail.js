@@ -14,14 +14,14 @@ const ItemsDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`https://motors-warehouse.herokuapp.com/items/${id}`)
+      .get(`https://motors-warehouse-server-side.vercel.app/items/${id}`)
       .then((data) => setItems(data.data));
   }, [id, items]);
 
   const handleDelivered = () => {
     const newQuantity = parseInt(items.quantity) - 1;
     axios
-      .put(`https://motors-warehouse.herokuapp.com/items/${id}`, {
+      .put(`https://motors-warehouse-server-side.vercel.app/items/${id}`, {
         newQuantity,
       })
       .then((res) => console.log("updated"));
@@ -33,7 +33,7 @@ const ItemsDetail = () => {
     let restockValue = e.target.name.value;
     const newQuantity = parseInt(restockValue) + parseInt(items.quantity);
     axios
-      .put(`https://motors-warehouse.herokuapp.com/items/${id}`, {
+      .put(`https://motors-warehouse-server-side.vercel.app/items/${id}`, {
         newQuantity,
       })
       .then((res) => console.log(res.data));

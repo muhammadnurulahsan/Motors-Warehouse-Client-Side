@@ -34,7 +34,7 @@ const AddItem = () => {
         rating: e.target.rating.value,
         description: e.target.description.value,
       };
-      fetch("https://motors-warehouse.herokuapp.com/items", {
+      fetch("https://motors-warehouse-server-side.vercel.app/items", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -36,7 +36,7 @@ const Login = () => {
     useSignInWithGoogle(auth);
 
   if (user || emailUser) {
-    const url = "https://motors-warehouse.herokuapp.com/login";
+    const url = "https://motors-warehouse-server-side.vercel.app/login";
     fetch(url, {
       method: "POST",
       body: JSON.stringify({

@@ -21,7 +21,7 @@ const MyItems = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://motors-warehouse.herokuapp.com/items/${id}`, {
+        fetch(`https://motors-warehouse-server-side.vercel.app/items/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })

@@ -6,7 +6,7 @@ const useItemsDetail = () => {
   const [items, setItems] = useState({});
 
   useEffect(() => {
-    const url = `https://motors-warehouse.herokuapp.com/items/${id}`;
+    const url = `https://motors-warehouse-server-side.vercel.app/items/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));

@@ -22,7 +22,7 @@ const ManageInventories = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://motors-warehouse.herokuapp.com/items/${id}`, {
+        fetch(`https://motors-warehouse-server-side.vercel.app/items/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })
@@ -125,9 +125,7 @@ const ManageInventories = () => {
                           {item?.supplierEmail}
                         </td>
                         <td className="text-center pt-3">
-                          <button
-                            className="btn p-0 shadow-none"
-                          >
+                          <button className="btn p-0 shadow-none">
                             <span className="badge bg-success">Delivered</span>
                           </button>
                         </td>

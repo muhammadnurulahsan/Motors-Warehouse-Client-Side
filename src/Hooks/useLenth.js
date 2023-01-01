@@ -13,7 +13,7 @@ const useLenth = () => {
 
   useEffect(() => {
     const getItems = async () => {
-      const url = `https://motors-warehouse.herokuapp.com/user?email=${email}`;
+      const url = `https://motors-warehouse-server-side.vercel.app/user?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setMyItems(data);
@@ -27,7 +27,7 @@ const useLenth = () => {
       }
     };
     getItems();
-  }, [email, user, navigate, myItems, isLoading]);
+  }, [email, user, navigate, myItems, isLoading, setIsLoading]);
 
   return [myItems, setMyItems, isLoading];
 };

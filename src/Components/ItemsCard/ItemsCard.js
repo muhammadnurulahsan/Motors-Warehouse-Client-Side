@@ -14,14 +14,22 @@ const ItemsCard = ({ items }) => {
   const handleDelivered = () => {
     const newQuantity = parseInt(items.quantity) - 1;
     axios
-      .put(`https://motors-warehouse.herokuapp.com/items/${id}`, {
+      .put(`https://motors-warehouse-server-side.vercel.app/items/${id}`, {
         newQuantity,
       })
       .then((res) => console.log("updated"));
   };
 
-  const { _id, productName, img, price, rate, quantity, supplier, description } =
-    items;
+  const {
+    _id,
+    productName,
+    img,
+    price,
+    rate,
+    quantity,
+    supplierName,
+    description,
+  } = items;
 
   const navigate = useNavigate();
 
@@ -42,7 +50,7 @@ const ItemsCard = ({ items }) => {
                 </h5>
               </div>
               <div>
-                <p className="supplier-text my-2">Supplier: {supplier}</p>
+                <p className="supplier-text my-2">Supplier: {supplierName}</p>
                 <div className="py-1 fw-bold">
                   <FontAwesomeIcon className="text-warning" icon={faStar} />
                   <FontAwesomeIcon className="text-warning" icon={faStar} />
